@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HKK-jS-OSd">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Food Trucks Near Me-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="foodTruckTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ocf-Xa-Die">
+                                <rect key="frame" x="0.0" y="64" width="600" height="387"/>
+                            </mapView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6Z-sf-09Y">
+                                <rect key="frame" x="0.0" y="448" width="600" height="152"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ocf-Xa-Die" secondAttribute="bottom" constant="149" id="19i-5G-3sU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ocf-Xa-Die" secondAttribute="trailing" constant="-20" id="3uL-VQ-XPw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="R6Z-sf-09Y" secondAttribute="bottom" id="4qB-X4-Ysc"/>
+                            <constraint firstItem="ocf-Xa-Die" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="A3a-Ax-5ce"/>
+                            <constraint firstItem="R6Z-sf-09Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="W4I-6P-7D4"/>
+                            <constraint firstItem="ocf-Xa-Die" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="frE-dM-I3e"/>
+                            <constraint firstItem="R6Z-sf-09Y" firstAttribute="top" secondItem="ocf-Xa-Die" secondAttribute="bottom" constant="-3" id="qgQ-1u-aLc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="R6Z-sf-09Y" secondAttribute="trailing" constant="-20" id="xhv-Zk-JB9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Food Trucks Near Me" id="npq-Hd-t6h"/>
+                    <connections>
+                        <outlet property="dayPicker" destination="R6Z-sf-09Y" id="Oue-xh-GzA"/>
+                        <outlet property="mapView" destination="ocf-Xa-Die" id="Yer-MN-Scr"/>
+                        <segue destination="RFz-f1-TCa" kind="show" identifier="NextScene" id="aIV-TN-QGE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1302" y="467"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="Psa-HB-6m1">
+            <objects>
+                <viewController id="RFz-f1-TCa" customClass="DetailsViewController" customModule="foodTruckTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bhZ-zq-Kye"/>
+                        <viewControllerLayoutGuide type="bottom" id="lcY-p9-TaS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hpc-YT-QDW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F79-hc-VjT">
+                                <rect key="frame" x="0.0" y="64" width="600" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="FR5-2C-npC"/>
+                                    <constraint firstAttribute="width" secondItem="F79-hc-VjT" secondAttribute="height" multiplier="75:16" id="KcT-S3-qO7"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="KcT-S3-qO7"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bpb-ib-9P3">
+                                <rect key="frame" x="0.0" y="284" width="600" height="316"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailCell" rowHeight="44" id="Rk8-ZU-129" customClass="TruckDetailsCell" customModule="foodTruckTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rk8-ZU-129" id="vib-Z7-sSX">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMe-UH-9OM">
+                                                    <rect key="frame" x="27" y="11" width="122" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detailsLabel" destination="oMe-UH-9OM" id="buF-P8-23N"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Bpb-ib-9P3" secondAttribute="trailing" constant="-20" id="3Yn-X9-qeR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="F79-hc-VjT" secondAttribute="trailing" id="3dA-xp-9Ef"/>
+                            <constraint firstItem="Bpb-ib-9P3" firstAttribute="top" secondItem="F79-hc-VjT" secondAttribute="bottom" id="4za-gZ-2mX"/>
+                            <constraint firstItem="F79-hc-VjT" firstAttribute="top" secondItem="bhZ-zq-Kye" secondAttribute="bottom" constant="20" id="8z6-7H-6cH"/>
+                            <constraint firstItem="F79-hc-VjT" firstAttribute="leading" secondItem="Hpc-YT-QDW" secondAttribute="leadingMargin" id="HJV-0f-OEm"/>
+                            <constraint firstItem="Bpb-ib-9P3" firstAttribute="top" secondItem="F79-hc-VjT" secondAttribute="bottom" id="J8m-YP-vDh"/>
+                            <constraint firstItem="lcY-p9-TaS" firstAttribute="top" secondItem="Bpb-ib-9P3" secondAttribute="bottom" id="kRI-Cg-qbY"/>
+                            <constraint firstItem="Bpb-ib-9P3" firstAttribute="leading" secondItem="Hpc-YT-QDW" secondAttribute="leadingMargin" constant="-20" id="v0D-dT-0hJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="F79-hc-VjT" id="bcJ-fL-xy1"/>
+                        <outlet property="tableView" destination="Bpb-ib-9P3" id="BBa-nd-YIi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mHT-w9-bec" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1950" y="467"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Rkf-p9-wQe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HKK-jS-OSd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1dv-Fa-vRJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fFn-f9-10G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NbS-nG-Na1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="490" y="467"/>
+        </scene>
+    </scenes>
+</document>
